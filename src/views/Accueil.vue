@@ -1,9 +1,20 @@
-<template lang="">
-  <div>
-    <h1>Accueil</h1>
-  </div>
-</template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      greeting: 'Hello World!'
+    }
+  }
+}
 </script>
-<style lang=""></style>
+
+<template>
+  <p class="greeting">{{ greeting }}</p>
+</template>
+
+<style>
+.greeting {
+  color: red;
+  font-weight: bold;
+}
+</style>

@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Accueil from "../views/Accueil.vue";
+import Message from "../views/Message.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -7,6 +8,11 @@ const routes: Array<RouteRecordRaw> = [
     name: "Accueil",
     component: Accueil,
   },
+  {
+    path: "/Message",
+    name: "Message",
+    component: Message,
+  }
   // {
   //   path: '/about',
   //   name: 'About',
