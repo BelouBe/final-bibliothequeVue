@@ -1,95 +1,105 @@
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import type { DefineComponent from 'vue';
+
 
 <template lang="html">
   <div class="corps">
-    <div class="colonne-1">
-      <router-link to="" class="colonne-1-element">
-        <img class="icon-nav" src="../assets/zara/bookshelf_icon-icons.com_54414.png">
-        <h1>Bibliothèque numérique</h1>
-      </router-link>
-      <router-link to="" class="colonne-1-element">
-        <img class="icon-nav" src="../assets/zara/Books_icon-icons.com_76879.png">
-        <h1>Emprunt</h1>
-      </router-link>
-      <router-link to="/profil" class="colonne-1-element">
-        <img class="icon-nav" src="../assets/zara/avatar_face_man_boy_profile_smiley_happy_people_icon_181659.png">
-        <h1>Profil</h1>
-      </router-link>
-    </div>
-    <div class="colonne-2">
-      <div class="recherche-comp">
-        <form class="recherche">
-          <input type="text" placeholder="Entrer un titre">
-          <img class="icon-nav" src="../assets/zara/searchmagnifierinterfacesymbol1_79893.png">
-        </form>
-        <form class="recherche-2">
-          <select>
-              <option>Catégorie 1</option>
-              <option>Catégorie 2</option>
-              <option>Catégorie 3</option>
-          </select>
-        </form>
+      <div class="navigation">
+        <img class="icon-ispm" src="../assets/sandratra/logo-ispm.png">
+        <div class="div-liens">
+          <router-link to="" class="div-liens-element">
+            <img class="icon-nav" src="../assets/zara/Books_icon-icons.com_76879.png">
+            <h1>Emprunt</h1>
+          </router-link>
+          <router-link to="/profil" class="div-liens-element">
+            <img class="icon-nav" src="../assets/zara/avatar_face_man_boy_profile_smiley_happy_people_icon_181659.png">
+            <h1>Profil</h1>
+          </router-link>
+        </div>
+        <div class="div-recherche">
+          <form class="recherche">
+            <input type="text" placeholder="Entrer un titre">
+            <img class="icon-nav" src="../assets/zara/searchmagnifierinterfacesymbol1_79893.png">
+          </form>
+          <button style="margin-top : 5px">Déconnexion</button>
+        </div>
       </div>
-      <br><br>
+      <br>
       <div class="card">
-        <img class="icon-livre" src="../assets/logo.png"> 
+        <!-- <img class="icon-livre" src="../assets/logo.png">  -->
         <div>
-          <h3 class="statut-livre">Statut du livre</h3>
-          <h1 class="titre-livre">Titre du livre</h1>
-          <h2 class="auteur-livre">Auteur</h2>
+            <!-- <h3 class="statut-livre">Statut du livre</h3>
+            <h1 class="titre-livre">Titre du livre</h1>
+            <h2 class="auteur-livre">Auteur</h2> -->
+            <livre_emprunt/>
         </div>
       </div>
     </div>
-  </div>
+    
 </template>
-<script>
-export default {};
+<script lang="ts">
+import livre_emprunt from '../components/zara/livre_emprunt.vue'
+
+export default {
+  components: {
+    livre_emprunt
+  },
+
+};
 
 
 </script>
 <style lang="css">
 
+.icon-ispm {
+  width: 130px;
+}
+
+.icon-nav {
+  width: 50px;
+}
 .corps {
   padding: 0;
   margin: 0;
   height: 100vh;
-  display: flex;
-  justify-content: space-between;
 }
 
-.icon-nav {
-  width: 40px;
-  height: 40px;
+.navigation {
+ display: flex;
+ align-items: flex-start;
+ justify-content: space-between;
+ position: sticky;
+ top: 0;
+ background-color: white;
+ margin-bottom: 12px;
+ z-index: 1;
 }
 
-.colonne-1 {
+.div-liens {
   display: flex;
   flex-basis: 1;
-  flex-direction: column;
+  flex-direction: row;
 }
-.colonne-1-element {
+.div-liens-element {
   display: flex;
   margin: 10px;
-  padding: 0px 20px;
+  padding: 0px 60px;
   border-radius: 10px;
   align-items: center;
   text-decoration: none;
   background: #f0f2f5;
   color: black;
   transition: color .2s;
-  padding: 5px;
+
 }
 
-.colonne-1-element h1 {
+.div-liens-element h1 {
  font-size: 1rem;
 }
 
-.colonne-1-element img {
+.div-liens-element img {
  margin-right: 10px ;
 }
 
-.colonne-1-element:hover {
+.div-liens-element:hover {
   background: #e4e6eb;  
   color: black;
 }
@@ -97,11 +107,6 @@ export default {};
 .colonne-2 {
   padding: 10px;
   flex: 3;
-}
-
-.colonne-2 img {
-  border-radius: 10px;
-   margin-right: 20px;
 }
 
 .colonne-2 input, select {
@@ -112,6 +117,7 @@ export default {};
   width: 20px;
   height: 20px;
   margin-left: 10px;
+  margin-right: 10px;
 }
 
 .card {
@@ -127,11 +133,12 @@ export default {};
   height: 200px;
 }
 
-.recherche-comp {
+.div-recherche {
   display: flex;
   justify-content: flex-end;
   background: white;
   padding: 10px;
+  flex-direction: column; 
 
 }
 
