@@ -1,8 +1,13 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
+<<<<<<< HEAD
 import Login from "../views/Login.vue";
 import Message from "../views/Message.vue";
 import SignIn from "../components/tsix/Login/SignIn.vue";
 import Profil from "../views/Profil.vue";
+=======
+import Accueil from "../views/Accueil.vue";
+import AcceuilEmprunt from "../views/Accueil_client.vue";
+>>>>>>> 4cea669d347ff1c590d4e662d6470844321a9c73
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -11,6 +16,7 @@ const routes: Array<RouteRecordRaw> = [
     component: Login,
   },
   {
+<<<<<<< HEAD
     path: "/Message",
     name: "Message",
     component: Message,
@@ -25,6 +31,13 @@ const routes: Array<RouteRecordRaw> = [
     name: "Profil",
     component: Profil,
   }
+=======
+    path: "/AcceuilEmprunt",
+    name: "AcceuilEmprunt",
+    component: AcceuilEmprunt,
+  },
+
+>>>>>>> 4cea669d347ff1c590d4e662d6470844321a9c73
   // {
   //   path: '/about',
   //   name: 'About',
