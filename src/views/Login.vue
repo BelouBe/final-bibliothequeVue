@@ -131,7 +131,7 @@ export default {
               response.matricule,
               response.numero
             );
-            router.push({ name: "Profil" });
+            router.push({ name: "AcceuilEmprunt" });
           }
         });
     },

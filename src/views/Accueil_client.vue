@@ -25,30 +25,24 @@
       <br>
       <div class="card">
         <!-- <img class="icon-livre" src="../assets/logo.png">  -->
-        <div>
             <!-- <h3 class="statut-livre">Statut du livre</h3>
             <h1 class="titre-livre">Titre du livre</h1>
             <h2 class="auteur-livre">Auteur</h2> -->
             <livre_emprunt/>
-        </div>
       </div>
     </div>
     
 </template>
 <script lang="ts">
-import livre_emprunt from '../components/zara/livre_emprunt.vue'
+import livre_emprunt from "../components/zara/livre_emprunt.vue";
 
 export default {
   components: {
-    livre_emprunt
+    livre_emprunt,
   },
-
 };
-
-
 </script>
 <style lang="css">
-
 .icon-ispm {
   width: 130px;
 }
@@ -63,14 +57,14 @@ export default {
 }
 
 .navigation {
- display: flex;
- align-items: flex-start;
- justify-content: space-between;
- position: sticky;
- top: 0;
- background-color: white;
- margin-bottom: 12px;
- z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  margin-bottom: 12px;
+  z-index: 1;
 }
 
 .div-liens {
@@ -87,20 +81,19 @@ export default {
   text-decoration: none;
   background: #f0f2f5;
   color: black;
-  transition: color .2s;
-
+  transition: color 0.2s;
 }
 
 .div-liens-element h1 {
- font-size: 1rem;
+  font-size: 1rem;
 }
 
 .div-liens-element img {
- margin-right: 10px ;
+  margin-right: 10px;
 }
 
 .div-liens-element:hover {
-  background: #e4e6eb;  
+  background: #e4e6eb;
   color: black;
 }
 
@@ -109,7 +102,8 @@ export default {
   flex: 3;
 }
 
-.colonne-2 input, select {
+.colonne-2 input,
+select {
   border-radius: 10px;
 }
 
@@ -138,8 +132,6 @@ export default {
   justify-content: flex-end;
   background: white;
   padding: 10px;
-  flex-direction: column; 
-
+  flex-direction: column;
 }
-
 </style>
