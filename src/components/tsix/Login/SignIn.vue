@@ -86,7 +86,7 @@
 console.log("hello");
 
 import { defineComponent } from "vue";
-import router from '@/router'
+import router from "@/router";
 
 export default defineComponent({
   name: "App",
@@ -100,12 +100,11 @@ export default defineComponent({
       }
     },
     valider() {
-      router.push({name: 'Login'})
-    }
+      router.push({ name: "Login" });
+    },
   },
 });
 </script>
-
 
 <style lang="scss" scoped>
 // .corpsSignIn{
@@ -128,31 +127,31 @@ export default defineComponent({
 input {
   border-radius: 6px;
 }
-table{
+table {
   margin: 0 auto;
   text-align: left;
 }
-td{
+td {
   padding: 2em;
 }
-input{
+input {
   width: 300px;
   height: 40px;
 }
-label{
+label {
   color: aliceblue;
 }
-button{
-  min-height:60px; 
-  font:500 16px/1 'Roboto',sans-serif; 
-  width:675px;
-  display:block; 
-  color:#FFF; 
+button {
+  min-height: 60px;
+  font: 500 16px/1 "Roboto", sans-serif;
+  width: 675px;
+  display: block;
+  color: #fff;
   background: #344397;
-  border:none; 
-  outline:0; 
-  }
-.compte{
+  border: none;
+  outline: 0;
+}
+.compte {
   cursor: pointer;
 }
 </style>
