@@ -3,6 +3,7 @@ import Login from "../views/Login.vue";
 import Message from "../views/Message.vue";
 import SignIn from "../components/tsix/Login/SignIn.vue";
 import Profil from "../views/Profil.vue";
+import Admin from "../views/Rotsy/Admin.vue";
 import AcceuilEmprunt from "../views/Accueil_client.vue";
 
 const routes: Array<RouteRecordRaw> = [
@@ -27,11 +28,15 @@ const routes: Array<RouteRecordRaw> = [
     component: Profil,
   },
   {
+    path: "/Admin",
+    name: "Admin",
+    component: Admin,
+  },
+  {
     path: "/AcceuilEmprunt",
     name: "AcceuilEmprunt",
     component: AcceuilEmprunt,
   },
-
   // {
   //   path: '/about',
   //   name: 'About',
