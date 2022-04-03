@@ -114,7 +114,10 @@ console.log("hello");
 
 import { defineComponent } from "vue";
 import router from "@/router";
+<<<<<<< HEAD
 import config from "@/types/config";
+=======
+>>>>>>> 47e3927719bef1271c6f8111eecb60d9632477c5
 
 export default defineComponent({
   name: "App",
@@ -177,10 +180,15 @@ export default defineComponent({
           });
       }
     },
+<<<<<<< HEAD
+=======
+    valider() {
+      router.push({ name: "Login" });
+    },
+>>>>>>> 47e3927719bef1271c6f8111eecb60d9632477c5
   },
 });
 </script>
-
 
 <style lang="scss" scoped>
 // .corpsSignIn{
@@ -231,6 +239,7 @@ button {
 .compte {
   cursor: pointer;
 }
+<<<<<<< HEAD
 .compte:hover {
   text-decoration: underline;
 }
@@ -251,3 +260,6 @@ button {
   margin-top: 50px;
 }
 </style>
+=======
+</style>
+>>>>>>> 47e3927719bef1271c6f8111eecb60d9632477c5
