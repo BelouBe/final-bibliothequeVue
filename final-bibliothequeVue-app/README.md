@@ -1,4 +1,4 @@
-# e-bibliotheque
+# final-bibliothequeVue-app
 
 ## Project setup
 ```
