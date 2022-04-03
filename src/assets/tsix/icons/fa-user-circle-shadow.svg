@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="186" height="186" viewBox="0 0 186 186">
+  <defs>
+    <filter id="fa-user-circle-shadow" x="0" y="0" width="186" height="186" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.761"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#fa-user-circle-shadow)">
+    <path id="fa-user-circle-shadow-2" data-name="fa-user-circle-shadow" d="M81.5.563a81.5,81.5,0,1,0,81.5,81.5A81.486,81.486,0,0,0,81.5.563Zm0,31.548A28.919,28.919,0,1,1,52.581,61.03,28.92,28.92,0,0,1,81.5,32.111Zm0,113.048a62.974,62.974,0,0,1-48.144-22.412,36.64,36.64,0,0,1,32.37-19.652,8.041,8.041,0,0,1,2.333.361A43.511,43.511,0,0,0,81.5,105.724a43.345,43.345,0,0,0,13.441-2.268,8.041,8.041,0,0,1,2.333-.361,36.64,36.64,0,0,1,32.37,19.652A62.974,62.974,0,0,1,81.5,145.159Z" transform="translate(11.5 7.94)" fill="none" stroke="#fff" stroke-width="5"/>
+  </g>
+</svg>
