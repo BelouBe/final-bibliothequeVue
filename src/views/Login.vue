@@ -39,9 +39,10 @@
       </div>
       <p
         id="error"
+        class="text-white bg-danger p-2"
         style="position: absolute; color: rgba(255, 0, 0, 0.8); display: none"
       >
-        erreur
+        Il y a une erreur
       </p>
       <router-link to="SignIn" class="forgot-pw">Créer un compte ?</router-link>
       <!-- <router-link to="Profil">Profil</router-link> -->
@@ -56,6 +57,8 @@ console.log("hello");
 import { defineComponent } from "vue";
 import router from "@/router";
 import Singleton from "../types/Singleton";
+import config from "@/types/config";
+
 export default {
   props: {},
   name: "App",
@@ -100,7 +103,7 @@ export default {
     validation() {
       console.log(this.matricule, this.password);
 
-      fetch("http://192.168.43.175:3000/api/user/login", {
+      fetch(config + "/api/user/login", {
         method: "post",
         headers: {
           "Content-type": "application/json",
@@ -226,13 +229,12 @@ span {
 }
 
 #signin .forgot-pw {
-  font: 600 14px/1 "Roboto", sans-serif;
-  color: #2e3c89;
-  text-decoration: none;
+  color: #3b3c42;
   float: right;
   margin: 0 0 25px 0;
   display: block;
 }
+
 #signin button.login {
   min-height: 60px;
   font: 500 16px/1 "Roboto", sans-serif;

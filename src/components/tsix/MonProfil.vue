@@ -202,7 +202,6 @@ export default defineComponent({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .contains {
-  // overflow-y: scroll;
   height: 780px;
   padding-bottom: 5em;
 }
@@ -333,6 +332,7 @@ h4 {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
+  height: max-content;
 }
 #imgadobebleu {
   padding-top: 0.5em;

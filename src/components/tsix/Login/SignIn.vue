@@ -1,9 +1,9 @@
 <template>
   <div id="signin">
-    <div class="container">
+    <div class="conteneur">
       <div class="tete">
         <h1>E-Bibiliothèque</h1>
-        <div class="form-title">Créer votre compte</div>
+        <div class="form-title text-white mt-4 mb-4">Créer votre compte</div>
       </div>
       <div class="corps">
         <table>
@@ -11,7 +11,13 @@
             <td>
               <div class="input-field">
                 <label for="nom">Nom</label><br />
-                <input type="text" id="nom" autocomplete="off" name="nom" />
+                <input
+                  type="text"
+                  id="nom"
+                  autocomplete="off"
+                  name="nom"
+                  v-model="nom"
+                />
               </div>
             </td>
             <td>
@@ -22,6 +28,7 @@
                   id="prenom"
                   autocomplete="off"
                   name="prenom"
+                  v-model="prenom"
                 />
               </div>
             </td>
@@ -30,20 +37,27 @@
           <tr>
             <td>
               <div class="input-field">
-                <label for="prenom">Matricule</label><br />
+                <label for="matricule">Matricule</label><br />
                 <input
                   type="text"
                   id="matricule"
                   autocomplete="off"
-                  name="prenom"
+                  name="matricule"
+                  v-model="matricule"
                 />
               </div>
             </td>
 
             <td>
               <div class="input-field">
-                <label for="tel">Téléphone</label><br />
-                <input type="text" id="tel" autocomplete="+261" name="tel" />
+                <label for="numero">Téléphone</label><br />
+                <input
+                  type="text"
+                  id="numero"
+                  autocomplete="+261"
+                  name="numero"
+                  v-model="numero"
+                />
               </div>
             </td>
           </tr>
@@ -57,6 +71,7 @@
                   id="email"
                   autocomplete="off"
                   name="email"
+                  v-model="email"
                 />
               </div>
             </td>
@@ -64,19 +79,31 @@
             <td>
               <div class="input-field">
                 <label for="password">Password</label><br />
-                <input type="password" id="password" name="password" />
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  v-model="password"
+                />
               </div>
             </td>
           </tr>
         </table>
+        <p
+          id="error"
+          class="text-white bg-danger container"
+          style="color: rgba(255, 0, 0, 0.8); display: none"
+        >
+          Il y a une erreur
+        </p>
       </div>
       <div class="compte">
-        <p @click="valider()" class="forgot-pw compte">
+        <p @click="login()" class="forgot-pw compte mt-4 mb-4">
           Vous avez déjà un compte ?
         </p>
       </div>
       <div class="btn">
-        <button v-on:click="action" class="login">Valider</button>
+        <button v-on:click="valider()" class="login">Valider</button>
       </div>
     </div>
   </div>
@@ -86,22 +113,70 @@
 console.log("hello");
 
 import { defineComponent } from "vue";
-import router from '@/router'
+import router from "@/router";
+import config from "@/types/config";
 
 export default defineComponent({
   name: "App",
   components: {},
+  data() {
+    return {
+      nom: "",
+      prenom: "",
+      matricule: "",
+      email: "",
+      numero: "",
+      password: "",
+    };
+  },
   methods: {
-    action() {
-      if (this.txtsubmit != "enregistrer") {
-        return (this.txtsubmit = "enregistrer");
-      } else {
-        return (this.txtsubmit = "valider");
-      }
+    login() {
+      router.push({ name: "Login" });
     },
     valider() {
-      router.push({name: 'Login'})
-    }
+      if (
+        this.nom == "" ||
+        this.prenom == "" ||
+        this.email == "" ||
+        this.numero == "" ||
+        this.password == "" ||
+        this.matricule == ""
+      ) {
+        document.getElementById("error").style.display = "block";
+        setTimeout(
+          () => (document.getElementById("error").style.display = "none"),
+          3000
+        );
+      } else {
+        fetch(config + "/api/user/create", {
+          method: "post",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            nom: this.nom,
+            prenom: this.prenom,
+            matricule: this.matricule,
+            email: this.email,
+            numero: this.numero,
+            password: this.password,
+          }),
+        })
+          .then((result) => result.json())
+          .then((responseJson) => {
+            console.log(responseJson);
+            if (responseJson == false) {
+              document.getElementById("error").style.display = "block";
+              // setTimeout(
+              //   () => (document.getElementById("error").style.display = "none"),
+              //   3000
+              // );
+            } else {
+              router.push({ name: "AcceuilEmprunt" });
+            }
+          });
+      }
+    },
   },
 });
 </script>
@@ -116,43 +191,63 @@ export default defineComponent({
 //   padding: 0;
 // }
 #signin {
-  background: #3f51b5;
-  position: relative;
-  height: 780px;
-  padding-bottom: 5em;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: #3f51b5;
+  height: max-content;
+  padding: 75px 0 75px 0;
+  // padding-bottom: 4em;
+  // padding-top: 6em;
 }
 input {
   border-radius: 6px;
 }
-table{
+table {
   margin: 0 auto;
   text-align: left;
 }
-td{
+td {
   padding: 2em;
 }
-input{
+input {
   width: 300px;
   height: 40px;
 }
-label{
+label {
   color: aliceblue;
 }
-button{
-  min-height:60px; 
-  font:500 16px/1 'Roboto',sans-serif; 
-  width:675px;
-  display:block; 
-  color:#FFF; 
+button {
+  min-height: 60px;
+  font: 500 16px/1 "Roboto", sans-serif;
+  width: 675px;
+  display: block;
+  color: #fff;
   background: #344397;
-  border:none; 
-  outline:0; 
-  }
-.compte{
+  border: none;
+  outline: 0;
+}
+.compte {
   cursor: pointer;
+}
+.compte:hover {
+  text-decoration: underline;
+}
+
+.corps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: max-content;
+}
+
+.btn {
+  margin: 0 auto;
+}
+.marge {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
 }
 </style>
