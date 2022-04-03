@@ -5,9 +5,9 @@
     <span>{{ author.books.length > 0 ? 'Yes' : 'No' }}</span>
     <component :is="Math.random() > 0.5 ? Foo : Bar" />
     <div v-if="this.a===1?'bonjour':'au revoir'"></div>  
+    <h1>Zara</h1>
   </div>
 </template>
-
 
 <script>
 
@@ -48,5 +48,4 @@ export default {
   div{
     background: var(--primary);
   }
-
 </style>

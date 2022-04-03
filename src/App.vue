@@ -16,6 +16,6 @@ export default {};
   box-sizing: border-box;
 }
 body {
-  overflow: hidden;
+  // overflow: hidden;
 }
 </style>

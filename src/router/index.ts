@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Accueil from "../views/Accueil.vue";
 import Admin from "../views/Rotsy/Admin.vue";
+import AcceuilEmprunt from "../views/Accueil_client.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -8,12 +9,16 @@ const routes: Array<RouteRecordRaw> = [
     name: "Accueil",
     component: Accueil,
   },
-
   {
     path: "/Admin",
     name: "Admin",
     component: Admin,
-  }
+  },
+  {
+    path: "/AcceuilEmprunt",
+    name: "AcceuilEmprunt",
+    component: AcceuilEmprunt,
+  },
   // {
   //   path: '/about',
   //   name: 'About',
