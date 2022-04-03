@@ -1,5 +1,6 @@
 .DS_Store
-node_modules
+/final-bibliothequeVue-app/node_modules
+/final-bibliothequeVue-api/node_modules
 /dist
 
 /tests/e2e/videos/
