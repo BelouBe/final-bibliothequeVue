@@ -11,6 +11,7 @@ export default {};
 </script>
 <style lang="scss">
 * {
+  --primary: yellow;
   margin: 0;
   box-sizing: border-box;
 }
